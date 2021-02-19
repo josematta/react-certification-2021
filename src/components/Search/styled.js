@@ -22,7 +22,7 @@ const InputContainer = styled.div`
 const SearchContainer = styled.div`
   display: flex;
 
-  background-color: #1c5476;
+  background-color: #f0575d;
   padding: 1em;
 `;
 

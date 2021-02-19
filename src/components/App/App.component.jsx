@@ -8,8 +8,9 @@ import LoginPage from '../../pages/Login';
 import NotFound from '../../pages/NotFound';
 import SecretPage from '../../pages/Secret';
 import Private from '../Private';
-import Fortune from '../Fortune';
 import Layout from '../Layout';
+
+import mockedData from '../../youtube-videos-mock.json';
 
 const GlobalStyles = createGlobalStyle`
   body {
@@ -27,7 +28,7 @@ function App() {
           <GlobalStyles />
           <Switch>
             <Route exact path="/">
-              <HomePage />
+              <HomePage items={mockedData.items} filter="video" />
             </Route>
             <Route exact path="/login">
               <LoginPage />
