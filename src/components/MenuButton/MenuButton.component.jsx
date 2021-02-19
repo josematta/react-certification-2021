@@ -1,7 +1,7 @@
 import React from 'react';
 import Styled from './styled';
 
-const MenuButton = (
+const MenuButton = () => (
   <Styled.MenuButton>
     <Styled.IconButton>
       <Styled.SvgButton focusable="false" viewBox="0 0 24 24" aria-hidden="true">

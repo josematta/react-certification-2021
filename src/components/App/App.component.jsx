@@ -39,7 +39,6 @@ function App() {
               <NotFound />
             </Route>
           </Switch>
-          <Fortune />
         </Layout>
       </AuthProvider>
     </BrowserRouter>
