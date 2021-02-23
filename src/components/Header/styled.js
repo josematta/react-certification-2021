@@ -12,13 +12,9 @@ const Header = styled.header`
   }
 `;
 
-const Item = styled.li``;
+const FloatedItem = styled.li`
+  float: ${(props) => props.float};
+`;
 
-const LeftItem = styled(Item)`
-  float: left;
-`;
-const RightItem = styled(Item)`
-  float: right;
-`;
-const Styled = { Header, LeftItem, RightItem };
+const Styled = { Header, FloatedItem };
 export default Styled;

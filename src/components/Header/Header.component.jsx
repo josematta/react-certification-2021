@@ -8,18 +8,18 @@ import LoginAvatar from '../LoginAvatar';
 const Header = () => (
   <Styled.Header>
     <ul>
-      <Styled.LeftItem>
+      <Styled.FloatedItem float="left">
         <MenuButton />
-      </Styled.LeftItem>
-      <Styled.LeftItem>
+      </Styled.FloatedItem>
+      <Styled.FloatedItem float="left">
         <Search />
-      </Styled.LeftItem>
-      <Styled.RightItem>
+      </Styled.FloatedItem>
+      <Styled.FloatedItem float="right">
         <LoginAvatar />
-      </Styled.RightItem>
-      <Styled.RightItem>
+      </Styled.FloatedItem>
+      <Styled.FloatedItem float="right">
         <ThemeToggle />
-      </Styled.RightItem>
+      </Styled.FloatedItem>
     </ul>
   </Styled.Header>
 );

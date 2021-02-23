@@ -1,14 +1,15 @@
 import React from 'react';
-import Styled from './styled';
+import { Menu, IconButton, SvgButton } from './styled';
+import icons from '../../icon-svg.json';
 
 const MenuButton = () => (
-  <Styled.MenuButton>
-    <Styled.IconButton>
-      <Styled.SvgButton focusable="false" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
-      </Styled.SvgButton>
-    </Styled.IconButton>
-  </Styled.MenuButton>
+  <Menu>
+    <IconButton>
+      <SvgButton focusable="false" viewBox="0 0 24 24" aria-hidden="true">
+        <path d={icons.svg.lines}></path>
+      </SvgButton>
+    </IconButton>
+  </Menu>
 );
 
 export default MenuButton;

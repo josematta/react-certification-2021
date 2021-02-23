@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import MenuButton from '../MenuButton';
 
 describe('selector types', () => {
-  it('select the search and test if the icon is rendered', () => {
+  it('select the MenuButton and test if the button is rendered', () => {
     render(<MenuButton />);
     expect(screen.getAllByRole('button').length).toBe(1);
   });

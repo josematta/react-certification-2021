@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import Header from '../Header';
 
 describe('selector types', () => {
-  it('select the search and test if the icon is rendered', () => {
+  it('select the Header and test if the list is rendered once', () => {
     render(<Header />);
     expect(screen.getAllByRole('list').length).toBe(1);
   });
