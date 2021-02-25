@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Header = styled.header`
+export const HeaderContainer = styled.header`
   background-color: #f0575d;
   width: 100%;
 
@@ -12,9 +12,6 @@ const Header = styled.header`
   }
 `;
 
-const FloatedItem = styled.li`
+export const FloatedItem = styled.li`
   float: ${(props) => props.float};
 `;
-
-const Styled = { Header, FloatedItem };
-export default Styled;

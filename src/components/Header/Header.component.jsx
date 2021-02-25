@@ -1,27 +1,27 @@
 import React from 'react';
-import Styled from './styled';
+import { HeaderContainer, FloatedItem } from './styled';
 import MenuButton from '../MenuButton';
 import Search from '../Search';
 import ThemeToggle from '../ThemeToggle';
 import LoginAvatar from '../LoginAvatar';
 
 const Header = () => (
-  <Styled.Header>
+  <HeaderContainer>
     <ul>
-      <Styled.FloatedItem float="left">
+      <FloatedItem float="left">
         <MenuButton />
-      </Styled.FloatedItem>
-      <Styled.FloatedItem float="left">
+      </FloatedItem>
+      <FloatedItem float="left">
         <Search />
-      </Styled.FloatedItem>
-      <Styled.FloatedItem float="right">
+      </FloatedItem>
+      <FloatedItem float="right">
         <LoginAvatar />
-      </Styled.FloatedItem>
-      <Styled.FloatedItem float="right">
+      </FloatedItem>
+      <FloatedItem float="right">
         <ThemeToggle />
-      </Styled.FloatedItem>
+      </FloatedItem>
     </ul>
-  </Styled.Header>
+  </HeaderContainer>
 );
 
 export default Header;
