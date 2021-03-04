@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 
@@ -21,14 +21,22 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 function App() {
+  const [data, setData] = useState(mockedData.items);
+
+  const search = (e) => {
+    e.preventDefault();
+    console.log(e.key);
+    //TODO: Rest call and setData
+  };
+
   return (
     <BrowserRouter>
       <AuthProvider>
-        <Layout>
+        <Layout onSubmit={search}>
           <GlobalStyles />
           <Switch>
             <Route exact path="/">
-              <HomePage items={mockedData.items} filter="video" />
+              <HomePage items={data} filter="video" />
             </Route>
             <Route exact path="/login">
               <LoginPage />

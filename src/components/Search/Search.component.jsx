@@ -2,7 +2,7 @@ import React from 'react';
 import { Icon, SearchContainer, IconContainer, InputContainer, Input } from './styled';
 import icons from '../../icon-svg.json';
 
-const Search = () => (
+const Search = (props) => (
   <SearchContainer>
     <IconContainer>
       <Icon>
@@ -10,7 +10,7 @@ const Search = () => (
       </Icon>
     </IconContainer>
     <InputContainer>
-      <Input type="text" readOnly value="wizeline" />
+      <Input type="text" onKeyPress={props.onSubmit} />
     </InputContainer>
   </SearchContainer>
 );
