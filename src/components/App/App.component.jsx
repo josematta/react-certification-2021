@@ -9,8 +9,9 @@ import NotFound from '../../pages/NotFound';
 import SecretPage from '../../pages/Secret';
 import Private from '../Private';
 import Layout from '../Layout';
-
+import VideoDetail from '../VideoDetail';
 import mockedData from '../../youtube-videos-mock.json';
+import youtube from '../../api/youtube';
 
 const GlobalStyles = createGlobalStyle`
   body {
@@ -24,9 +25,20 @@ function App() {
   const [data, setData] = useState(mockedData.items);
 
   const search = (e) => {
-    e.preventDefault();
-    console.log(e.key);
-    //TODO: Rest call and setData
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      handleFetch(e.target.value);
+    }
+  };
+
+  const handleFetch = async (criteria) => {
+    const response = await youtube.get('/search', {
+      params: {
+        q: criteria,
+      },
+    });
+    setData(response.data.items);
+    console.log(response.data.items);
   };
 
   return (
@@ -36,7 +48,7 @@ function App() {
           <GlobalStyles />
           <Switch>
             <Route exact path="/">
-              <HomePage items={data} filter="video" />
+              <HomePage items={data} refresh={setData} filter="video" />
             </Route>
             <Route exact path="/login">
               <LoginPage />
@@ -44,6 +56,9 @@ function App() {
             <Private exact path="/secret">
               <SecretPage />
             </Private>
+            <Route exact path="/videos/:videoId/:name">
+              <VideoDetail />
+            </Route>
             <Route path="*">
               <NotFound />
             </Route>

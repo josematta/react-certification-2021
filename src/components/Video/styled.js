@@ -1,24 +1,21 @@
 import styled from 'styled-components';
 
-const Container = styled.header`
+export const Container = styled.header`
   width: 350px;
 `;
 
-const Image = styled.img`
+export const Image = styled.img`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
 `;
 
-const InfoContainer = styled.div`
+export const InfoContainer = styled.div`
   padding: 1rem;
 `;
 
-const Title = styled.h3`
+export const Title = styled.a`
   font-size: 2rem;
 `;
-const Description = styled.p`
+export const Description = styled.p`
   align-self: bottom;
 `;
-
-const Styled = { Container, Image, InfoContainer, Title, Description };
-export default Styled;

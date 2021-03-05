@@ -3,7 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { getFilteredItems } from '../../utils/filter-videos';
 import { useAuth } from '../../providers/Auth';
 import Video from '../../components/Video';
-import Styled from './styled';
+import { Section, Container } from './styled';
 
 function HomePage({ items, filter }) {
   const history = useHistory();
@@ -18,13 +18,13 @@ function HomePage({ items, filter }) {
   }
 
   return (
-    <Styled.Section ref={sectionRef}>
-      <Styled.Container>
-        {visibleItems.map(({ etag, snippet }) => (
-          <Video key={etag} etag={etag} snippet={snippet} />
+    <Section ref={sectionRef}>
+      <Container>
+        {visibleItems.map(({ etag, snippet, id }) => (
+          <Video id={id} key={etag} etag={etag} snippet={snippet} />
         ))}
-      </Styled.Container>
-    </Styled.Section>
+      </Container>
+    </Section>
   );
 }
 

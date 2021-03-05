@@ -1,20 +1,20 @@
 import React from 'react';
-import Styled from './styled';
+import { Container, Image, InfoContainer, Title, Description } from './styled';
 
-const Video = ({ etag, snippet }) => {
+const Video = ({ etag, snippet, id }) => {
   return (
-    <Styled.Container key={etag}>
-      <Styled.Image
+    <Container key={etag}>
+      <Image
         src={snippet.thumbnails.medium.url}
         width={snippet.thumbnails.medium.width}
         height={snippet.thumbnails.medium.height}
         alt="image"
       />
-      <Styled.InfoContainer>
-        <Styled.Title>{snippet.title}</Styled.Title>
-        <Styled.Description>{snippet.description}</Styled.Description>
-      </Styled.InfoContainer>
-    </Styled.Container>
+      <InfoContainer>
+        <Title href={`/videos/${id.videoId}/${snippet.title}`}>{snippet.title}</Title>
+        <Description>{snippet.description}</Description>
+      </InfoContainer>
+    </Container>
   );
 };
 
