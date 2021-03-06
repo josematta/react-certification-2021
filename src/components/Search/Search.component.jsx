@@ -10,7 +10,7 @@ const Search = (props) => (
       </Icon>
     </IconContainer>
     <InputContainer>
-      <Input type="text" onKeyPress={props.onSubmit} />
+      <Input type="text" onKeyPress={props.onSubmit} placeholder="wizeline" />
     </InputContainer>
   </SearchContainer>
 );

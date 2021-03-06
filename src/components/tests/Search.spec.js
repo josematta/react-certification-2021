@@ -5,6 +5,6 @@ import Search from '../Search';
 describe('selector types', () => {
   it('select the search and test if only one input is rendered', () => {
     render(<Search />);
-    expect(screen.getByDisplayValue('wizeline')).toBeTruthy();
+    expect(screen.getAllByRole('textbox').length).toBe(1);
   });
 });

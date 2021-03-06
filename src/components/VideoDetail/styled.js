@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const VideoFrame = styled.iframe`
   width: 100%;
+  min-height: 400px;
 `;
 
 export const UnorderedList = styled.ul`
