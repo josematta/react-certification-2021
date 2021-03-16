@@ -1,1 +1,1 @@
-export { default } from './Context.provider';
+export { default, useVideos, useVideosUpdate } from './Context.provider';

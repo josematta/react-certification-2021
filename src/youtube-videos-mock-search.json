@@ -1,0 +1,142 @@
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "Td8BluqBCI2bhYT1zxBm0Otxvz4",
+  "nextPageToken": "CAUQAA",
+  "regionCode": "MX",
+  "pageInfo": { "totalResults": 179, "resultsPerPage": 5 },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "a5XyA1nnLF4uBndq7frZo700wKk",
+      "id": { "kind": "youtube#video", "videoId": "ELtCnnPnkdE" }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "qrqWlXOKGG9JR6DyOM6oYp2nNLk",
+      "id": { "kind": "youtube#video", "videoId": "1Sa1sYrQaaU" }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "nLBlLE5wcHiMbBCDDuG37kZFtkc",
+      "id": { "kind": "youtube#video", "videoId": "LjhCEhWiKXk" },
+      "snippet": {
+        "publishedAt": "2010-09-08T21:07:11Z",
+        "channelId": "UCoUM-UJ7rirJYP8CQ0EIaHA",
+        "title": "Bruno Mars - Just The Way You Are (Official Music Video)",
+        "description": "The official music video for Bruno Mars' \"Just The Way You Are\" from the album ‘Doo-Wops & Hooligans’.\n\nDirected by Ethan Lader\n\nInspired by the artwork of Erika Iris Simmons\n\n🔔 Subscribe for the latest official music videos, live performances, lyric videos, official audio, and more ➤ https://Atlantic.lnk.to/BMsubscribe\n\nWatch all of Bruno Mars’ Official Music Videos ➤ https://bit.ly/2U7I3mi\n\nSee Bruno Mars on tour ➤ Visit http://brunomars.com/tour for dates and more info.\n\nGet Bruno Mars merchandise ➤ https://brunom.rs/brunomarsstore\n\nFollow Bruno Mars:\nhttp://www.brunomars.com\nhttp://www.instagram.com/brunomars\nhttp://www.twitter.com/brunomars\nhttp://www.facebook.com/brunomars\n\nLYRICS\nOh, her eyes, her eyes, make the stars look like they're not shining\nHer hair, her hair, falls perfectly without her trying \nShe's so beautiful, and I tell her every day\n\nYeah, I know, I know, when I compliment her she won't believe me\nAnd it's so, it's so, sad to think that she don't see what I see\nBut every time she asks me do I look ok, I say\n\nWhen I see your face, there's not a thing that I would change\nCause you're amazing, just the way you are\nAnd when you smile, the whole world stops and stares for a while\nBecause girl you're amazing, just the way you are. Yeah.\n\nHer lips, her lips, I could kiss them all day if she let me\nHer laugh, her laugh, she hates but I think it's so sexy\nShe's so beautiful, and I tell her every day\n\nOh, you know, you know, you know, I'd never ask you to change\nIf perfect's what you're searching for then just stay the same\nSo, don't even bother asking if you look ok\nYou know I'll say\n\nWhen I see your face, there's not a thing that I would change\nCause you're amazing, just the way you are\nAnd when you smile, the whole world stops and stares for a while\nBecause girl you're amazing, just the way you are\nThe way you are, the way you are\nGirl you're amazing, just the way you are\n\nWhen I see your face, there's not a thing that I would change\nCause you're amazing, just the way you are\nAnd when you smile, the whole world stops and stares for a while\nCause girl you're amazing, just the way you are. Yeah.\n\nThe official YouTube channel of Atlantic Records artist Bruno Mars. \n \n11x GRAMMY Award winner and 27x GRAMMY Award nominee Bruno Mars is a celebrated singer, songwriter, producer, and musician with iconic hits like \"The Lazy Song\", \"That's What I Like\", \"Just The Way You Are\", \"24K Magic\", \"Locked Out Of Heaven\", and \"When I Was Your Man\". His legendary body of work also includes blockbuster albums such as Doo-Wops & Hooligans, Unorthodox Jukebox, and 24K Magic, as well as era-defining collaborations like \"Uptown Funk\" with Mark Ronson, \"Finesse\" with Cardi B, and \"Nothin' On You\" with B.o.B. Forever classic, yet supremely innovative, Bruno continues to redefine music, style, and popular culture, pushing the boundaries of pop, R&B, funk, soul, hip-hop, and dance, and remains as influential as ever.\n\n#BrunoMars #JustTheWayYouAre #DooWopsandHooligans #OfficialMusicVideo #AtlanticRecords",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/LjhCEhWiKXk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/LjhCEhWiKXk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/LjhCEhWiKXk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/LjhCEhWiKXk/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/LjhCEhWiKXk/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Bruno Mars",
+        "liveBroadcastContent": "none",
+        "publishTime": "2010-09-08T21:07:11Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "azd0DqvM7Aku82jJzrvLU94XQIU",
+      "id": { "kind": "youtube#video", "videoId": "i0A3-wc0rpw" },
+      "snippet": {
+        "publishedAt": "2013-11-20T19:24:21Z",
+        "channelId": "UCE560wL2ftkMrQL40LYFUVg",
+        "title": "Pharrell Williams - Happy (12AM)",
+        "description": "Get Pharrell's album G I R L on iTunes: http://smarturl.it/GIRLitunes \nGet Pharrell's album G I R L on Amazon: http://smarturl.it/GIRLamazonMP3\nGet Pharrell's album G I R L on Google Play: http://goo.gl/fwLdhZ\n\nFrom the Despicable Me 2 soundtrack. Check out http://24hoursofhappy.com to experience the world's first 24 hour music video! Directed by We Are From L.A.\n\nSubscribe to i am OTHER on YouTube: http://bit.ly/IAO_subscribe\nVideos, news and more: http://www.iamOTHER.com\nLike us on Facebook: http://www.facebook.com/iamOTHER\nFollow us on Twitter: http://twitter.com/i_am_OTHER\n\nPerformed by Pharrell Williams\nWritten and Produced by Pharrell Williams\nBackground Vocals performed by Rhea Dummett, Trevon Henderson, Ashley L. Lee, Shamika Hightower, Jasmine Murray and Terrence Rolle \nEMI April Music, Inc. obo Itself and More Water From Nazareth (ASCAP), Universal Pictures Music (ASCAP)\nRecorded by Mike Larson for i am OTHER entertainment\nAssisted by Matthew Desrameaux\nDigital Editing and Arrangement by Andrew Coleman and Mike Larson for i am OTHER entertainment\nRecorded at Circle House Studios, Miami, FL.\nMixed by Leslie Brathwaite at Music Box Studios, Atlanta, GA\n© 2013 Universal Studios\n\ni am OTHER:\nExecutive Producer - Pharrell Williams\nGeneral Manager - Caron Veazey\nCreative Director - Mimi Valdés\nExecutive Producer - Robin Frank \nAssociate Producer - Bethany Gould\nAssistant Producer - Alexandra DePersia\nDigital Marketing - Aviva Yael",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/i0A3-wc0rpw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/i0A3-wc0rpw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/i0A3-wc0rpw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/i0A3-wc0rpw/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/i0A3-wc0rpw/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "iamOTHER",
+        "liveBroadcastContent": "none",
+        "publishTime": "2013-11-20T19:24:21Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "4QXpREHQgCSN8oJwVSRTd1TfHQQ",
+      "id": { "kind": "youtube#video", "videoId": "CjxugyZCfuw" },
+      "snippet": {
+        "publishedAt": "2018-01-11T18:44:33Z",
+        "channelId": "UCe4LM_eKc9ywRmVuBm5pjQg",
+        "title": "The Greatest Showman Cast - This Is Me (Official Lyric Video)",
+        "description": "The official lyric video of \"This Is Me\" by The Greatest Showman Cast from the 'The Greatest Showman Soundtrack'.\n\n'The Greatest Showman Soundtrack' available now:\nDownload/Stream - https://atlantic.lnk.to/TheGreatestShowmanID\n \nSubscribe for more official content from Atlantic Records:\nhttps://Atlantic.lnk.to/subscribe\n\nFollow The Greatest Showman\nhttps://twitter.com/GreatestShowman\nhttps://facebook.com/GreatestShowman\nhttps://instagram.com/greatestshowman\n\nFollow Atlantic Records\nhttps://facebook.com/atlanticrecords\nhttps://instagram.com/atlanticrecords\nhttps://twitter.com/AtlanticRecords\nhttp://atlanticrecords.com\n\nThe official Atlantic Records YouTube Channel is home to the hottest in hip-hop, rock, pop, R&B, indie, musicals and soundtracks. With over 70 years of global recorded music history, Atlantic Records’ legacy and passion for artistry continues with Top 40 hitmakers like Wiz Khalifa, Sean Paul, Trey Songz, Bruno Mars, Charlie Puth, Janelle Monáe, and B.o.B. \n\nAtlantic Records prides itself for working on Motion Picture Soundtracks, such as “The Greatest Showman”, “Suicide Squad” and “The Fate of the Furious.” As well as Musical Soundtracks including “Dear Evan Hansen,” and Grammy and Tony Award Winning “Hamilton”.\n \nIt is home to world-renowned record labels representing music from every genre, including Asylum, Big Beat, Canvasback, Elektra, Fueled By Ramen, Rhino, Roadrunner, and Sire.\n \nSubscribe for the latest official music videos, official audio videos, performances, bts and more from our artists and projects.\nhttps://Atlantic.lnk.to/subscribe\n\n#TheGreatestShowman #ThisIsMe #Atlantic #AtlanticRecords #OfficialLyricVideo\n\nSing Along At Home with Your Favorite The Greatest Showman Soundtracks ➤ https://bit.ly/AtlanticSing\nBest Sing Along Songs at Home from Atlantic Records ➤ https://bit.ly/AtlanticSingAlong\nHome Workout Music from Atlantic Records ➤ https://bit.ly/AtlanticWorkOut\nRomantic Music To Listen To At Home from Atlantic Records ➤ https://bit.ly/AtlanticRomantic\nWork From Home Music from Atlantic Records ➤ https://bit.ly/AtlanticWork",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/CjxugyZCfuw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/CjxugyZCfuw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/CjxugyZCfuw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/CjxugyZCfuw/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/CjxugyZCfuw/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Atlantic Records",
+        "liveBroadcastContent": "none",
+        "publishTime": "2018-01-11T18:44:33Z"
+      }
+    }
+  ]
+}

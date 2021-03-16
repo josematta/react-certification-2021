@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
-
+import ContextProvider from '../../providers/Context';
 import AuthProvider from '../../providers/Auth';
 import HomePage from '../../pages/Home';
 import LoginPage from '../../pages/Login';
@@ -22,50 +22,31 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 function App() {
-  const [data, setData] = useState(mockedData.items);
-
-  const search = (e) => {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      handleFetch(e.target.value);
-    }
-  };
-
-  const handleFetch = async (criteria) => {
-    const response = await youtube.get('/search', {
-      params: {
-        q: criteria,
-      },
-    });
-    setData(response.data.items);
-    console.log(response.data.items);
-  };
-
   return (
-    <BrowserRouter>
-      <AuthProvider>
-        <Layout onSubmit={search}>
-          <GlobalStyles />
-          <Switch>
-            <Route exact path="/">
-              <HomePage items={data} refresh={setData} filter="video" />
-            </Route>
-            <Route exact path="/login">
-              <LoginPage />
-            </Route>
-            <Private exact path="/secret">
-              <SecretPage />
-            </Private>
-            <Route exact path="/videos/:videoId/:name">
-              <VideoDetail />
-            </Route>
-            <Route path="*">
-              <NotFound />
-            </Route>
-          </Switch>
-        </Layout>
-      </AuthProvider>
-    </BrowserRouter>
+    <ContextProvider>
+      <BrowserRouter>
+        <AuthProvider>
+          <Layout>
+            <GlobalStyles />
+            <Switch>
+              <Route exact path="/">
+                <HomePage filter="video" />
+              </Route>
+              <Route exact path="/login">
+                <LoginPage />
+              </Route>
+              <Private exact path="/secret">
+                <SecretPage />
+              </Private>
+
+              <Route path="*">
+                <NotFound />
+              </Route>
+            </Switch>
+          </Layout>
+        </AuthProvider>
+      </BrowserRouter>
+    </ContextProvider>
   );
 }
 
