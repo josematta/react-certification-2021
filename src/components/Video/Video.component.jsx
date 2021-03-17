@@ -1,7 +1,10 @@
 import React from 'react';
 import { Container, Image, InfoContainer, Title, Description } from './styled';
+import { useVideoDetailed } from '../../providers/Context';
 
-const Video = ({ etag, snippet, id }) => {
+function Video({ etag, snippet, id }) {
+  const updateVideoDetail = useVideoDetailed();
+
   return (
     <Container key={etag}>
       <Image
@@ -11,11 +14,13 @@ const Video = ({ etag, snippet, id }) => {
         alt="image"
       />
       <InfoContainer>
-        <Title href={`/videos/${id.videoId}/${snippet.title}`}>{snippet.title}</Title>
+        <Title onClick={(e) => updateVideoDetail(e, { id: id, name: snippet.title })}>
+          {snippet.title}
+        </Title>
         <Description>{snippet.description}</Description>
       </InfoContainer>
     </Container>
   );
-};
+}
 
 export default Video;
