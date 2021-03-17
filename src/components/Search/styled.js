@@ -15,7 +15,7 @@ export const Input = styled.input`
   border: 0;
 `;
 
-export const InputContainer = styled.div`
+export const InputContainer = styled.form`
   order: 3;
 `;
 

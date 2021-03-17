@@ -5,14 +5,14 @@ import Search from '../Search';
 import ThemeToggle from '../ThemeToggle';
 import LoginAvatar from '../LoginAvatar';
 
-const Header = () => (
+const Header = (props) => (
   <HeaderContainer>
     <ul>
       <FloatedItem float="left">
         <MenuButton />
       </FloatedItem>
       <FloatedItem float="left">
-        <Search />
+        <Search onSubmit={props.onSubmit} />
       </FloatedItem>
       <FloatedItem float="right">
         <LoginAvatar />
