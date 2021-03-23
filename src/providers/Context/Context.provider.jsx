@@ -46,7 +46,7 @@ const ContextProvider = ({ children }) => {
             dispatch({ type: 'grid', payload: { data: response.data } });
           })
           .catch((err) => {
-            console.log(err);
+            console.error(err);
           });
       }
     }
@@ -69,5 +69,4 @@ const ContextProvider = ({ children }) => {
   );
 };
 
-export { useVideos, useVideosUpdate, useVideoDetailed };
-export default ContextProvider;
+export { useVideos, useVideosUpdate, useVideoDetailed, ContextProvider };

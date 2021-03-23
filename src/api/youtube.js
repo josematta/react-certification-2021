@@ -23,7 +23,6 @@ export const youtube = (function () {
       return response;
     },
     related: async function (videoId) {
-      console.log(videoId);
       const response = await init.get('/search', {
         params: {
           part: 'snippet',

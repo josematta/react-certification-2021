@@ -7,7 +7,6 @@ import VideoDetail from '../../components/VideoDetail';
 
 const MainDisplay = ({ state, filter }) => {
   if (state.video) {
-    console.log('detail');
     return <VideoDetail videoId={state.video.id} videoName={state.video.name} />;
   }
 

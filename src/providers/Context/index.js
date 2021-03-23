@@ -1,5 +1,5 @@
 export {
-  default,
+  ContextProvider,
   useVideos,
   useVideosUpdate,
   useVideoDetailed,

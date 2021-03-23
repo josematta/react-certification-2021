@@ -12,7 +12,6 @@ function HomePage({ filter }) {
   const history = useHistory();
   const sectionRef = useRef(null);
   const { authenticated, logout } = useAuth();
-  //const visibleItems = getFilteredItems(state.videos.items, filter);
 
   function deAuthenticate(event) {
     event.preventDefault();
