@@ -1,22 +1,11 @@
 import React, { createContext, useContext, useReducer } from 'react';
 import dataInit from '../../youtube-videos-mock.json';
-import dataSearch from '../../youtube-videos-mock-search.json';
 import { youtube } from '../../api/youtube';
 
 const VideoContext = createContext();
-const VideoUpdateContext = createContext();
-const VideoDetailedContext = createContext();
 
 function useVideos() {
   return useContext(VideoContext);
-}
-
-function useVideosUpdate() {
-  return useContext(VideoUpdateContext);
-}
-
-function useVideoDetailed() {
-  return useContext(VideoDetailedContext);
 }
 
 function reducer(state, action) {
@@ -40,7 +29,7 @@ const ContextProvider = ({ children }) => {
       if (e.target.value.length === 0) {
         dispatch({ type: 'grid', payload: { data: dataInit } });
       } else {
-        const response = youtube
+        youtube
           .search(e.target.value)
           .then((response) => {
             dispatch({ type: 'grid', payload: { data: response.data } });
@@ -59,14 +48,12 @@ const ContextProvider = ({ children }) => {
   }
 
   return (
-    <VideoContext.Provider value={state}>
-      <VideoUpdateContext.Provider value={searchVideos}>
-        <VideoDetailedContext.Provider value={selectVideo}>
-          {children}
-        </VideoDetailedContext.Provider>
-      </VideoUpdateContext.Provider>
+    <VideoContext.Provider
+      value={{ state: state, searchVideos: searchVideos, selectVideo: selectVideo }}
+    >
+      {children}
     </VideoContext.Provider>
   );
 };
 
-export { useVideos, useVideosUpdate, useVideoDetailed, ContextProvider };
+export { useVideos, ContextProvider };

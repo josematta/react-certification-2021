@@ -6,11 +6,14 @@ import Video from '../../components/Video';
 import VideoDetail from '../../components/VideoDetail';
 
 const MainDisplay = ({ state, filter }) => {
-  if (state.video) {
-    return <VideoDetail videoId={state.video.id} videoName={state.video.name} />;
+  if (state.state.video) {
+    return (
+      <VideoDetail videoId={state.state.video.id} videoName={state.state.video.name} />
+    );
   }
 
-  const visibleItems = getFilteredItems(state.videos.items, filter);
+  console.log(state);
+  const visibleItems = getFilteredItems(state.state.videos.items, filter);
 
   return visibleItems.map(({ etag, snippet, id }) =>
     snippet ? <Video id={id} key={etag} etag={etag} snippet={snippet} /> : void 0

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Container, Image, InfoContainer, Title, Description } from './styled';
-import { useVideoDetailed } from '../../providers/Context';
+import { useVideos } from '../../providers/Context';
 
 function Video({ etag, snippet, id }) {
-  const updateVideoDetail = useVideoDetailed();
+  const updateVideoDetail = useVideos().selectVideo;
 
   return (
     <Container key={etag}>

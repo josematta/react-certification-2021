@@ -1,10 +1,10 @@
 import React from 'react';
 import { Icon, SearchContainer, IconContainer, InputContainer, Input } from './styled';
 import icons from '../../icon-svg.json';
-import { useVideosUpdate } from '../../providers/Context';
+import { useVideos } from '../../providers/Context';
 
 function Search(props) {
-  const updateVideo = useVideosUpdate();
+  const updateVideo = useVideos().searchVideos;
 
   return (
     <SearchContainer>
