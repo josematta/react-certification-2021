@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
-import ContextProvider from '../../providers/Context';
+import { ContextProvider } from '../../providers/Context';
 import AuthProvider from '../../providers/Auth';
 import HomePage from '../../pages/Home';
 import LoginPage from '../../pages/Login';
@@ -9,9 +9,6 @@ import NotFound from '../../pages/NotFound';
 import SecretPage from '../../pages/Secret';
 import Private from '../Private';
 import Layout from '../Layout';
-import VideoDetail from '../VideoDetail';
-import mockedData from '../../youtube-videos-mock.json';
-import youtube from '../../api/youtube';
 
 const GlobalStyles = createGlobalStyle`
   body {
@@ -38,7 +35,6 @@ function App() {
               <Private exact path="/secret">
                 <SecretPage />
               </Private>
-
               <Route path="*">
                 <NotFound />
               </Route>

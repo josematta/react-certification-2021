@@ -1,41 +1,59 @@
-import React, { useState, createContext, useContext } from 'react';
+import React, { createContext, useContext, useReducer } from 'react';
 import dataInit from '../../youtube-videos-mock.json';
-import dataSearch from '../../youtube-videos-mock-search.json';
+import { youtube } from '../../api/youtube';
 
 const VideoContext = createContext();
-const VideoUpdateContext = createContext();
 
 function useVideos() {
   return useContext(VideoContext);
 }
 
-function useVideosUpdate() {
-  return useContext(VideoUpdateContext);
+function reducer(state, action) {
+  switch (action.type) {
+    case 'grid':
+      return { videos: action.payload.data, video: null };
+    case 'detail':
+      return { videos: null, video: action.payload.data };
+    default:
+      return state;
+  }
 }
 
 const ContextProvider = ({ children }) => {
-  const [videos, setVideos] = useState(dataInit);
+  const [state, dispatch] = useReducer(reducer, { videos: dataInit });
 
   function searchVideos(e) {
     if (e.key === 'Enter') {
       e.preventDefault();
 
       if (e.target.value.length === 0) {
-        setVideos(dataInit);
+        dispatch({ type: 'grid', payload: { data: dataInit } });
       } else {
-        setVideos(dataSearch);
+        youtube
+          .search(e.target.value)
+          .then((response) => {
+            dispatch({ type: 'grid', payload: { data: response.data } });
+          })
+          .catch((err) => {
+            console.error(err);
+          });
       }
     }
   }
 
+  function selectVideo(e, data) {
+    e.preventDefault();
+    const video = data;
+    dispatch({ type: 'detail', payload: { data: video } });
+  }
+
   return (
-    <VideoContext.Provider value={videos}>
-      <VideoUpdateContext.Provider value={searchVideos}>
-        {children}
-      </VideoUpdateContext.Provider>
+    <VideoContext.Provider
+      value={{ state: state, searchVideos: searchVideos, selectVideo: selectVideo }}
+    >
+      {children}
     </VideoContext.Provider>
   );
 };
 
-export { useVideos, useVideosUpdate };
-export default ContextProvider;
+export { useVideos, ContextProvider };
