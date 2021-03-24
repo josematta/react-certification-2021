@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext, useCallback } from 'react';
-
 import { AUTH_STORAGE_KEY } from '../../utils/constants';
 import { storage } from '../../utils/storage';
-
+import { auth } from '../../firebase';
+import { useHistory } from 'react-router';
 const AuthContext = React.createContext(null);
 
 function useAuth() {
@@ -15,7 +15,7 @@ function useAuth() {
 
 function AuthProvider({ children }) {
   const [authenticated, setAuthenticated] = useState(false);
-
+  const history = useHistory();
   useEffect(() => {
     const lastAuthState = storage.get(AUTH_STORAGE_KEY);
     const isAuthenticated = Boolean(lastAuthState);
@@ -23,9 +23,19 @@ function AuthProvider({ children }) {
     setAuthenticated(isAuthenticated);
   }, []);
 
-  const login = useCallback(() => {
-    setAuthenticated(true);
-    storage.set(AUTH_STORAGE_KEY, true);
+  const login = useCallback((email, password) => {
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        setAuthenticated(true);
+        storage.set(AUTH_STORAGE_KEY, true);
+        history.push('/');
+      })
+      .catch((error) => {
+        setAuthenticated(false);
+        console.error('error', error);
+        // ..
+      });
   }, []);
 
   const logout = useCallback(() => {

@@ -1,8 +1,9 @@
 import React from 'react';
 import { Container, Image, InfoContainer, Title, Description } from './styled';
 import { useVideos } from '../../providers/Context';
+import FavoriteCheckbox from '../FavoriteCheckbox';
 
-function Video({ etag, snippet, id }) {
+function Video({ etag, snippet, id, favorite }) {
   const updateVideoDetail = useVideos().selectVideo;
 
   return (
@@ -17,6 +18,7 @@ function Video({ etag, snippet, id }) {
         <Title onClick={(e) => updateVideoDetail(e, { id: id, name: snippet.title })}>
           {snippet.title}
         </Title>
+        <FavoriteCheckbox favorite={favorite} id={id.videoId}></FavoriteCheckbox>
         <Description>{snippet.description}</Description>
       </InfoContainer>
     </Container>
