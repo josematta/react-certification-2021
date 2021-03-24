@@ -18,7 +18,12 @@ function Video({ etag, snippet, id, favorite }) {
         <Title onClick={(e) => updateVideoDetail(e, { id: id, name: snippet.title })}>
           {snippet.title}
         </Title>
-        <FavoriteCheckbox favorite={favorite} id={id.videoId}></FavoriteCheckbox>
+        <FavoriteCheckbox
+          favorite={favorite}
+          etag={etag}
+          snippet={snippet}
+          id={id}
+        ></FavoriteCheckbox>
         <Description>{snippet.description}</Description>
       </InfoContainer>
     </Container>

@@ -5,16 +5,17 @@ import Favorite from '@material-ui/icons/Favorite';
 import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
 import { storage } from '../../utils/storage';
 
-const FavoriteCheckbox = function ({ id, favorite }) {
+const FavoriteCheckbox = function ({ id, snippet, etag, favorite }) {
+  const videoId = id.videoId;
   const [fav, setFav] = useState(favorite);
   const toggleFavorite = function (event) {
     const favorites = storage.get('favorites') ?? {};
 
     if (event.target.checked) {
-      favorites[id] = id;
+      favorites[videoId] = { id: id, snippet: snippet, etag: etag };
       storage.set('favorites', favorites);
     } else {
-      delete favorites[id];
+      delete favorites[videoId];
       storage.set('favorites', favorites);
     }
     setFav(event.target.checked);

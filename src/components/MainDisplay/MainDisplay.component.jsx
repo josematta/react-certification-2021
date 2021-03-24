@@ -1,7 +1,5 @@
 import React from 'react';
-import Styled from './styled';
 import { getFilteredItems } from '../../utils/filter-videos';
-import { useVideos } from '../../providers/Context';
 import Video from '../../components/Video';
 import VideoDetail from '../../components/VideoDetail';
 import { storage } from '../../utils/storage';
