@@ -28,6 +28,7 @@ function HomePage({ filter }) {
       {authenticated ? (
         <Layout>
           <Section ref={sectionRef}>
+            <h2>Home</h2>
             <Container>
               <MainDisplay state={state} filter={filter} />
             </Container>

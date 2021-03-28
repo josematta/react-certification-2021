@@ -2,9 +2,20 @@ import React from 'react';
 import { Icon, SearchContainer, IconContainer, InputContainer, Input } from './styled';
 import icons from '../../icon-svg.json';
 import { useVideos } from '../../providers/Context';
+import { useHistory } from 'react-router-dom';
+import { youtube } from '../../api/youtube';
 
 function Search(props) {
-  const updateVideo = useVideos().searchVideos;
+  //const updateVideo = useVideos().searchVideos;
+
+  let history = useHistory();
+
+  function handleSearch(e) {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      history.push(`/search/${e.target.value}`);
+    }
+  }
 
   return (
     <SearchContainer>
@@ -14,7 +25,7 @@ function Search(props) {
         </Icon>
       </IconContainer>
       <InputContainer>
-        <Input type="text" onKeyPress={updateVideo} placeholder="wizeline" />
+        <Input type="text" onKeyPress={handleSearch} placeholder="wizeline" />
       </InputContainer>
     </SearchContainer>
   );

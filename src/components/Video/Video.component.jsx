@@ -1,10 +1,16 @@
 import React from 'react';
 import { Container, Image, InfoContainer, Title, Description } from './styled';
-import { useVideos } from '../../providers/Context';
 import FavoriteCheckbox from '../FavoriteCheckbox';
+import { useHistory } from 'react-router-dom';
 
-function Video({ etag, snippet, id, favorite }) {
-  const updateVideoDetail = useVideos().selectVideo;
+function Video({ etag, snippet, id, favorite, route }) {
+  const history = useHistory();
+  const updateVideoDetail = (e, prop) => {
+    const currentRoute = prop.route ?? 'details';
+    e.preventDefault();
+    console.log(prop);
+    history.push(`/${currentRoute}/${prop.id.videoId}`);
+  };
 
   return (
     <Container key={etag}>
@@ -15,7 +21,11 @@ function Video({ etag, snippet, id, favorite }) {
         alt="image"
       />
       <InfoContainer>
-        <Title onClick={(e) => updateVideoDetail(e, { id: id, name: snippet.title })}>
+        <Title
+          onClick={(e) =>
+            updateVideoDetail(e, { id: id, name: snippet.title, route: route })
+          }
+        >
           {snippet.title}
         </Title>
         <FavoriteCheckbox

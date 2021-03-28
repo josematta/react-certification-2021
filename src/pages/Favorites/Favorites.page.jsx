@@ -19,7 +19,14 @@ function Favorites({ filter }) {
         const favorite = favorites ? (favorites[id.videoId] ? true : false) : false;
 
         return snippet ? (
-          <Video id={id} key={etag} etag={etag} snippet={snippet} favorite={favorite} />
+          <Video
+            id={id}
+            key={etag}
+            etag={etag}
+            snippet={snippet}
+            favorite={favorite}
+            route={`favoritedetails`}
+          />
         ) : (
           void 0
         );

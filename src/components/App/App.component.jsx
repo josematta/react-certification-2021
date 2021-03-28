@@ -6,7 +6,8 @@ import AuthProvider from '../../providers/Auth';
 import HomePage from '../../pages/Home';
 import Favorites from '../../pages/Favorites';
 import Details from '../../pages/Details';
-
+import FavoriteDetails from '../../pages/FavoriteDetails';
+import Search from '../../pages/Search';
 import LoginPage from '../../pages/Login';
 import NotFound from '../../pages/NotFound';
 import SecretPage from '../../pages/Secret';
@@ -42,6 +43,12 @@ function App() {
             </Private>
             <Route path="/details/:id">
               <Details />
+            </Route>
+            <Route path="/favoritedetails/:id">
+              <FavoriteDetails />
+            </Route>
+            <Route path="/search/:criteria">
+              <Search />
             </Route>
             <Route path="*">
               <NotFound />

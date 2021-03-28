@@ -33,7 +33,7 @@ function AuthProvider({ children }) {
       })
       .catch((error) => {
         setAuthenticated(false);
-        console.error('error', error);
+        console.log(error);
         // ..
       });
   }, []);
