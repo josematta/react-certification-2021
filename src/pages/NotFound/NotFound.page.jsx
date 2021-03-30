@@ -1,16 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { Button } from '@material-ui/core';
+import { HeaderContainer } from '../../components/Header/styled';
 import './NotFound.styles.css';
 
 function NotFoundPage() {
   return (
-    <section className="not-found">
-      <Link to="/" className="home-link">
-        home
-      </Link>
-      <img src="404.gif" alt="page not found" />
-    </section>
+    <>
+      <HeaderContainer>
+        <Button variant="contained">
+          <Link to="/">home</Link>
+        </Button>
+      </HeaderContainer>
+      <h3>Oops. Something went wrong. Page not found !!!</h3>
+    </>
   );
 }
 

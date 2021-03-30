@@ -23,21 +23,19 @@ function HomePage({ filter }) {
   function redirectToLogin() {
     history.push('/login');
   }
+
+  if (!authenticated) {
+    redirectToLogin();
+  }
   return (
-    <>
-      {authenticated ? (
-        <Layout>
-          <Section ref={sectionRef}>
-            <h2>Home</h2>
-            <Container>
-              <MainDisplay state={state} filter={filter} />
-            </Container>
-          </Section>
-        </Layout>
-      ) : (
-        redirectToLogin()
-      )}
-    </>
+    <Layout>
+      <Section ref={sectionRef}>
+        <h2>Home</h2>
+        <Container>
+          <MainDisplay state={state} filter={filter} />
+        </Container>
+      </Section>
+    </Layout>
   );
 }
 

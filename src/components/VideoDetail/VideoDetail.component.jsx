@@ -7,8 +7,10 @@ import { youtube } from '../../api/youtube';
 const VideoDetail = ({ videoId, videoName, favorite }) => {
   favorite = favorite ?? 'false';
   const [related, setRelated] = useState([]);
-
   const path = favorite === 'true' ? 'favoritedetails' : 'details';
+  const cache = storage.get('cache');
+
+  videoName = cache[videoId] ? cache[videoId].snippet.title : videoName; //TODO: if is not in the cache, fetch it from the youtube API (use the useState hook)
 
   useEffect(() => {
     if (favorite === 'true') {

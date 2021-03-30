@@ -2,14 +2,20 @@ import React from 'react';
 import { Container, Image, InfoContainer, Title, Description } from './styled';
 import FavoriteCheckbox from '../FavoriteCheckbox';
 import { useHistory } from 'react-router-dom';
+import { storage } from '../../utils/storage';
 
 function Video({ etag, snippet, id, favorite, route }) {
   const history = useHistory();
-  const updateVideoDetail = (e, prop) => {
-    const currentRoute = prop.route ?? 'details';
+  const updateVideoDetail = (e, { route, id }) => {
+    const cache = storage.get('cache') ?? {};
+
+    cache[id.videoId] = { id: id, snippet: snippet, etag: etag };
+    storage.set('cache', cache);
+
+    const currentRoute = route ?? 'details';
     e.preventDefault();
-    console.log(prop);
-    history.push(`/${currentRoute}/${prop.id.videoId}`);
+
+    history.push(`/${currentRoute}/${id.videoId}`);
   };
 
   return (

@@ -6,14 +6,12 @@ import { useHistory } from 'react-router-dom';
 import { youtube } from '../../api/youtube';
 
 function Search(props) {
-  //const updateVideo = useVideos().searchVideos;
-
   let history = useHistory();
 
-  function handleSearch(e) {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      history.push(`/search/${e.target.value}`);
+  function handleSearch({ key, preventDefault = () => {}, target: { value } = {} } = {}) {
+    if (key === 'Enter') {
+      preventDefault();
+      history.push(`/search/${value}`);
     }
   }
 

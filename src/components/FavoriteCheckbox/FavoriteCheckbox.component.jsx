@@ -8,17 +8,17 @@ import { storage } from '../../utils/storage';
 const FavoriteCheckbox = function ({ id, snippet, etag, favorite }) {
   const videoId = id.videoId;
   const [fav, setFav] = useState(favorite);
-  const toggleFavorite = function (event) {
+  const toggleFavorite = function ({ target = {} } = {}) {
     const favorites = storage.get('favorites') ?? {};
 
-    if (event.target.checked) {
+    if (target.checked) {
       favorites[videoId] = { id: id, snippet: snippet, etag: etag };
       storage.set('favorites', favorites);
     } else {
       delete favorites[videoId];
       storage.set('favorites', favorites);
     }
-    setFav(event.target.checked);
+    setFav(target.checked);
   };
 
   return (

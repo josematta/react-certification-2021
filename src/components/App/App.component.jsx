@@ -34,7 +34,6 @@ function App() {
             <Route exact path="/favorites">
               <Favorites />
             </Route>
-
             <Route exact path="/login">
               <LoginPage />
             </Route>
