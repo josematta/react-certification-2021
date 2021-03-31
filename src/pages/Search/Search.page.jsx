@@ -22,6 +22,7 @@ function Favorites({ filter }) {
 
   return (
     <Layout>
+      <h2>Search</h2>
       {visibleItems.map(({ etag, snippet, id }) => {
         const favorite = favorites ? (favorites[id.videoId] ? true : false) : false;
 
