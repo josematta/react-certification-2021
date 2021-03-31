@@ -21,4 +21,12 @@ describe('selector types', () => {
     fireEvent.click(menu);
     expect(screen.getByText('Favorites')).toBeTruthy();
   });
+
+  it('Click the MenuButton and test if disappears with tab', () => {
+    render(<MenuButton />);
+    const menu = screen.getByTestId('menu-svg');
+    fireEvent.click(menu);
+    fireEvent.keyDown(menu, { key: 'Tab', code: 'Tab' });
+    expect(screen.getByText('Favorites')).toBeFalsy();
+  });
 });
