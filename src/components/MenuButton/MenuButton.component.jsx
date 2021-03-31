@@ -40,6 +40,7 @@ const MenuButton = function () {
   return (
     <div>
       <MenuIcon
+        data-testid="menu-svg"
         ref={anchorRef}
         aria-controls={open ? 'menu-list-grow' : undefined}
         aria-haspopup="true"
