@@ -2,6 +2,7 @@ import React, { createContext, useContext, useReducer } from 'react';
 import dataInit from '../../youtube-videos-mock.json';
 
 const VideoContext = createContext();
+const initialState = { dark: false, videos: dataInit };
 
 function useVideos() {
   return useContext(VideoContext);
@@ -9,45 +10,22 @@ function useVideos() {
 
 function reducer(state, action) {
   switch (action.type) {
-    case 'grid':
-      return { videos: action.payload.data, video: null };
-    case 'detail':
-      return { videos: null, video: action.payload.data };
+    case 'changeTheme':
+      return { dark: !state.dark, videos: dataInit };
     default:
       return state;
   }
 }
 
 const ContextProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, { videos: dataInit });
+  const [state, dispatch] = useReducer(reducer, initialState);
 
-  // function searchVideos(e) {
-  //   if (e.key === 'Enter') {
-  //     e.preventDefault();
-
-  //     if (e.target.value.length === 0) {
-  //       dispatch({ type: 'grid', payload: { data: dataInit } });
-  //     } else {
-  //       youtube
-  //         .search(e.target.value)
-  //         .then((response) => {
-  //           dispatch({ type: 'grid', payload: { data: response.data } });
-  //         })
-  //         .catch((err) => {
-  //           console.error(err);
-  //         });
-  //     }
-  //   }
-  // }
-
-  function selectVideo(e, data) {
-    e.preventDefault();
-    const video = data;
-    dispatch({ type: 'detail', payload: { data: video } });
+  function toggleTheme(e, data) {
+    dispatch({ type: 'changeTheme' });
   }
 
   return (
-    <VideoContext.Provider value={{ state: state, selectVideo: selectVideo }}>
+    <VideoContext.Provider value={{ state: state, toggleTheme: toggleTheme }}>
       {children}
     </VideoContext.Provider>
   );
