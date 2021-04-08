@@ -15,6 +15,7 @@ export const InfoContainer = styled.div`
 
 export const Title = styled.div`
   font-size: 2rem;
+  cursor: pointer;
 `;
 export const Description = styled.p`
   align-self: bottom;

@@ -1,7 +1,10 @@
-import React from 'react';
-import Styled from './styled';
+import React, { useContext } from 'react';
 import Switch from '@material-ui/core/Switch';
+import { useVideos } from '../../providers/Context';
 
-const ThemeToggle = () => <Switch name="checkedA" />;
+const ThemeToggle = () => {
+  const videoContext = useVideos();
 
+  return <Switch onClick={videoContext.toggleTheme} name="checkedA" />;
+};
 export default ThemeToggle;

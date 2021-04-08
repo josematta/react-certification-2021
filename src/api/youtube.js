@@ -26,7 +26,7 @@ export const youtube = (function () {
       const response = await init.get('/search', {
         params: {
           part: 'snippet',
-          relatedToVideoId: videoId.videoId,
+          relatedToVideoId: videoId,
           type: 'video',
         },
       });

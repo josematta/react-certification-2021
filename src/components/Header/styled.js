@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const HeaderContainer = styled.header`
   background-color: #f0575d;
   width: 100%;
-
+  min-height: 63px;
   & > ul {
     list-style-type: none;
     margin: 0;

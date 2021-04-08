@@ -1,9 +1,22 @@
 import React from 'react';
 import { Container, Image, InfoContainer, Title, Description } from './styled';
-import { useVideos } from '../../providers/Context';
+import FavoriteCheckbox from '../FavoriteCheckbox';
+import { useHistory } from 'react-router-dom';
+import { storage } from '../../utils/storage';
 
-function Video({ etag, snippet, id }) {
-  const updateVideoDetail = useVideos().selectVideo;
+function Video({ etag, snippet, id, favorite, route }) {
+  const history = useHistory();
+  const updateVideoDetail = (e, { route, id }) => {
+    const cache = storage.get('cache') ?? {};
+
+    cache[id.videoId] = { id: id, snippet: snippet, etag: etag };
+    storage.set('cache', cache);
+
+    const currentRoute = route ?? 'details';
+    e.preventDefault();
+
+    history.push(`/${currentRoute}/${id.videoId}`);
+  };
 
   return (
     <Container key={etag}>
@@ -14,9 +27,19 @@ function Video({ etag, snippet, id }) {
         alt="image"
       />
       <InfoContainer>
-        <Title onClick={(e) => updateVideoDetail(e, { id: id, name: snippet.title })}>
+        <Title
+          onClick={(e) =>
+            updateVideoDetail(e, { id: id, name: snippet.title, route: route })
+          }
+        >
           {snippet.title}
         </Title>
+        <FavoriteCheckbox
+          favorite={favorite}
+          etag={etag}
+          snippet={snippet}
+          id={id}
+        ></FavoriteCheckbox>
         <Description>{snippet.description}</Description>
       </InfoContainer>
     </Container>

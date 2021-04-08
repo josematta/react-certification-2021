@@ -1,6 +1,1 @@
-export {
-  ContextProvider,
-  useVideos,
-  useVideosUpdate,
-  useVideoDetailed,
-} from './Context.provider';
+export { ContextProvider, useVideos } from './Context.provider';

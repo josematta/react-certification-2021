@@ -5,6 +5,7 @@ import { useAuth } from '../../providers/Auth';
 import MainDisplay from '../../components/MainDisplay';
 import { Section, Container } from './styled';
 import { useVideos } from '../../providers/Context';
+import Layout from '../../components/Layout';
 
 function HomePage({ filter }) {
   const state = useVideos();
@@ -19,12 +20,22 @@ function HomePage({ filter }) {
     history.push('/');
   }
 
+  function redirectToLogin() {
+    history.push('/login');
+  }
+
+  if (!authenticated) {
+    redirectToLogin();
+  }
   return (
-    <Section ref={sectionRef}>
-      <Container>
-        <MainDisplay state={state} filter={filter} />
-      </Container>
-    </Section>
+    <Layout>
+      <Section ref={sectionRef}>
+        <h2>Home</h2>
+        <Container>
+          <MainDisplay state={state} filter={filter} />
+        </Container>
+      </Section>
+    </Layout>
   );
 }
 
